@@ -16,7 +16,7 @@
       <% chapter[:content].each do |line_number, line| %>
       <ul>
         <% if line.include?(@search_query) %>
-          <li><a href="/chapters/<%= chapter_number %>#<%= line_number %>"><%= line %></a></li>
+          <li><a href="/chapters/<%= chapter_number %>#<%= line_number %>"><%= highlight_text(line) %></a></li>
         <% end %>
       </ul>
       <% end %>

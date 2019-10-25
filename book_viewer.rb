@@ -46,6 +46,10 @@ helpers do
       "<p id='#{index+1}'>#{line}</p>"
     end.join
   end
+
+  def highlight_text(line)
+    line.gsub(@search_query, "<strong>#{@search_query}</strong>")
+  end
 end
 
 def get_chapters
@@ -64,10 +68,10 @@ def get_chapters
   end
 end
 
-def get_title(chapter_number)
-  @contents[chapter_number-1]
-end
+# def get_title(chapter_number)
+#   @contents[chapter_number-1]
+# end
 
-def get_query(chapter)
-  chapter.select { |line| line.include?(@search_query) }
-end
+# def get_query(chapter)
+#   chapter.select { |line| line.include?(@search_query) }
+# end
